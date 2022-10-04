@@ -53,7 +53,7 @@ public class Session {
         System.out.println();
     }
 
-    private int[] sort(int[] nums){
+    private static int[] sort(int[] nums){
         for(int start = 0; start < nums.length - 1; start++){
             int minIdx = start;
             for(int j = start + 1; j < nums.length; j++){
