@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.finalproject.SceneController">
+   <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0">
+      <children>
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Image Tool">
+            <font>
+               <Font name="Heiti TC Medium" size="36.0" />
+            </font>
+            <VBox.margin>
+               <Insets bottom="20.0" top="20.0" />
+            </VBox.margin>
+         </Text>
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Image Tool helps you convert multiple images into desired format easily. " wrappingWidth="522.2550659179688">
+            <VBox.margin>
+               <Insets bottom="20.0" />
+            </VBox.margin>
+            <font>
+               <Font name="Heiti TC Light" size="15.0" />
+            </font>
+         </Text>
+         <Button mnemonicParsing="false" onAction="#chooseFile" prefHeight="50.0" prefWidth="200.0" text="Upload Images" wrapText="true">
+            <font>
+               <Font name="Heiti TC Light" size="14.0" />
+            </font>
+         </Button>
+         <HBox fx:id="uploadComplete" alignment="CENTER" prefHeight="80.0" prefWidth="200.0" visible="false">
+            <children>
+               <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Upload Complete!">
+                  <HBox.margin>
+                     <Insets right="10.0" />
+                  </HBox.margin>
+               </Text>
+               <Button mnemonicParsing="false" onAction="#clickToSeeButton" text="Click to see" />
+            </children>
+            <VBox.margin>
+               <Insets top="10.0" />
+            </VBox.margin>
+         </HBox>
+         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Image Uploaded" wrappingWidth="149.6699981689453">
+            <font>
+               <Font name="Heiti TC Light" size="18.0" />
+            </font>
+         </Text>
+         <ScrollPane fx:id="reviewContainer" prefHeight="439.0" prefWidth="600.0">
+            <VBox.margin>
+               <Insets />
+            </VBox.margin>
+            <content>
+               <VBox fx:id="container" prefHeight="400.0" prefWidth="600.0" visible="false" />
+            </content>
+         </ScrollPane>
+         <VBox>
+            <children>
+               <VBox alignment="CENTER" prefHeight="48.0" prefWidth="600.0">
+                  <children>
+                     <Button mnemonicParsing="false" onAction="#clearAll" prefHeight="41.0" prefWidth="46.0" text="Clear" />
+                  </children>
+               </VBox>
+               <HBox alignment="CENTER" prefHeight="60.0" prefWidth="600.0">
+                  <children>
+                     <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0">
+                        <children>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Convert to: ">
+                              <font>
+                                 <Font name="Heiti TC Light" size="15.0" />
+                              </font>
+                           </Text>
+                           <Label fx:id="format" textFill="#1100ff">
+                              <font>
+                                 <Font name="Heiti TC Light" size="14.0" />
+                              </font>
+                           </Label>
+                        </children>
+                     </HBox>
+                     <Button fx:id="jpg" mnemonicParsing="false" onAction="#onJPGClick" text=".jpg files">
+                        <font>
+                           <Font name="Heiti TC Light" size="14.0" />
+                        </font>
+                        <HBox.margin>
+                           <Insets right="10.0" />
+                        </HBox.margin>
+                     </Button>
+                     <Button fx:id="png" mnemonicParsing="false" onAction="#onPNGClick" text=".png files">
+                        <font>
+                           <Font name="Heiti TC Light" size="14.0" />
+                        </font>
+                        <HBox.margin>
+                           <Insets right="10.0" />
+                        </HBox.margin>
+                     </Button>
+                     <Button fx:id="tiff" mnemonicParsing="false" onAction="#onTIFFClick" text=".tiff files">
+                        <font>
+                           <Font name="Heiti TC Light" size="14.0" />
+                        </font>
+                        <HBox.margin>
+                           <Insets right="10.0" />
+                        </HBox.margin>
+                     </Button>
+                     <Button fx:id="gif" mnemonicParsing="false" onAction="#onGIFClick" text=".gif files">
+                        <font>
+                           <Font name="Heiti TC Light" size="14.0" />
+                        </font>
+                     </Button>
+                  </children>
+               </HBox>
+               <VBox alignment="BASELINE_CENTER" prefHeight="65.0" prefWidth="600.0">
+                  <children>
+                     <Button mnemonicParsing="false" onAction="#onStartClick" prefWidth="100.0" style="-fx-background-color: rgb(103,172,91);" text="Start">
+                        <padding>
+                           <Insets bottom="5.0" left="20.0" right="20.0" top="5.0" />
+                        </padding>
+                        <font>
+                           <Font name="Heiti TC Light" size="18.0" />
+                        </font>
+                     </Button>
+                     <VBox fx:id="convertionComplete" alignment="CENTER" prefHeight="47.0" prefWidth="600.0" visible="false">
+                        <children>
+                           <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Convertion Complete!" textAlignment="CENTER" wrappingWidth="219.02398681640625">
+                              <font>
+                                 <Font name="Heiti TC Light" size="16.0" />
+                              </font>
+                              <VBox.margin>
+                                 <Insets bottom="10.0" />
+                              </VBox.margin>
+                           </Text>
+                        </children>
+                     </VBox>
+                  </children>
+               </VBox>
+            </children>
+         </VBox>
+         <VBox alignment="CENTER" prefHeight="101.0" prefWidth="600.0">
+            <children>
+               <Button fx:id="downloadButton" mnemonicParsing="false" onAction="#onDownloadClick" text="Download" visible="false">
+                  <font>
+                     <Font name="Heiti TC Medium" size="16.0" />
+                  </font>
+                  <VBox.margin>
+                     <Insets bottom="10.0" />
+                  </VBox.margin>
+               </Button>
+               <Text fx:id="downloadSection" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Download Complete!" visible="false" wrappingWidth="114.56884765625" />
+            </children>
+         </VBox>
+      </children>
+   </VBox>
+   <padding>
+      <Insets left="100.0" />
+   </padding>
+</ScrollPane>
