@@ -28,7 +28,9 @@ class MyImage implements MyFile {
     private String getSizeMB () {
         return String.format("%.2fMB",file.length() * 1.0 / 1000000);
     }
-
+    
+    // return image property according to property name provided.
+    /* This method is created in light of the Factory Design Pattern, hiding the javaxt library from frond-end developer */
     public String getProperties (String name) {
         HashMap<Integer, Object> iptc = image.getIptcTags();
         HashMap<Integer, Object> exif = image.getExifTags();
@@ -45,7 +47,8 @@ class MyImage implements MyFile {
         else if (name.equalsIgnoreCase("size")) return getSizeMB();
         else return "/";
     }
-
+    
+    // saving image to desired format and desired directory.
     public void saveAs (String format, String directory) {
         String fileName = file.getName();
         int dot = fileName.indexOf(".");
